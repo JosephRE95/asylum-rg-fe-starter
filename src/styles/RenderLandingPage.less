@@ -64,7 +64,6 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border: 8px solid red;
   box-sizing: border-box;
   text-align: center;
   justify-content: space-between;
@@ -99,13 +98,27 @@
   margin: 1rem 5rem;
 }
 
-.view-more-data-btn-container {
-  height: 44px;
-  width: 180px;
-  margin: 0 auto;
-  text-align: center;
-  margin-bottom: 10%;
+.button-flex{
+    background-color: aqua;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Align children in a row */
+    justify-content: space-between; /* Space out the items evenly */
+    border: 2px solid red; /* Border for visibility */
+    margin-top:0;
+    padding: 20px; /* Padding inside the container */
+    box-sizing: border-box;
+
 }
+
+.view-more-data-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Aligns items vertically in the center */
+    gap: 1rem; /* Adds some space between the buttons */
+    width: 100%; /* Ensure it stretches the full width of its container */
+    padding: 1rem;
+  }
+  
 .middle-section {
   display: flex; /* Use Flexbox for layout */
   justify-content: space-around; /* Use space-around for even spacing */
@@ -140,12 +153,74 @@
 //      ADD THIS BACK IN WHEN YOU HAVE A BOTTOM SECTION
 // }
 
+
+
+.subsection{
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Align children in a row */
+    justify-content: center;
+    margin-top:5rem;
+    margin-bottom: 0;
+    border: 2px solid red;
+
+}
+
+.subsection_div{
+    border: 1px solid blue;
+    font-family: "moneta";
+    padding: 20px;
+    font-size:xx-large;
+}
+
+
+
+.SystemicDisparityInsights {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Align children in a row */
+    justify-content: space-between; /* Space out the items evenly */
+    border: 2px solid red; /* Border for visibility */
+    margin-top:0;
+    padding: 20px; /* Padding inside the container */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    font-family: Georgia, Times, 'Times New Roman', serif;
+}
+
+
+
+.moreLove {
+    width: 300px; /* Fixed width for each section */
+    min-height: 150px; /* Fixed height for each section */
+    border: 1px solid blue; /* Border for visibility */
+    padding: 10px; /* Padding inside each box */
+    box-sizing: border-box; /* Include padding and border in the width and height */
+    overflow: hidden; /* Hide overflow text */
+    text-align: center; /* Center text */
+}
+.moreLove h1{
+    font-size: 3rem;
+}
+
+
+.button_section{
+    display: flex; /* Use flexbox for layout */
+    flex-direction:column; /* Align children in a row */
+    align-items: center; /* Center the items horizontally */
+    text-align: center;
+    justify-content:center; /* Space out the items evenly */
+    border: 10px solid blue; /* Border for visibility */
+    white-space: nowrap; 
+   
+}
+
+
+
 .back-to-top {
   width: 8%;
-  font-size: 1.2rem;
-  cursor: pointer;
   color: black;
-  margin: 5% auto;
+ 
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+ 
 }
 
 .ant-space-align-center {
