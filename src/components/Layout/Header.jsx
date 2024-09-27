@@ -9,16 +9,18 @@ const { primary_accent_color } = colors;
 function HeaderContent() {
   return (
     <div
-      style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        width: '100%',
-        backgroundColor: primary_accent_color,
-      }}
-    >
+    style={{
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      width: '100%',
+      backgroundColor: primary_accent_color,
+      height: '10vh',
+    }}
+  >
       <div className="hrf-logo">
         <a href="https://www.humanrightsfirst.org/">
-          <Image width={100} src={Logo} preview={false} alt="HRF logo white" />
+          <Image width={75} src={Logo} preview={false} alt="HRF logo white" />
         </a>
       </div>
       <div>

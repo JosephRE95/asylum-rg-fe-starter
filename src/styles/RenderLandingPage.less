@@ -1,6 +1,5 @@
 @main-color: #404C4A;
 @secondary-color: #707070;
-@white: #FFFFFF;
 @mobile-small: ~"(min-width: 320px) and (max-width: 375px)";
 @mobile-medium: ~"(min-width: 376px) and (max-width: 414px)";
 @mobile-large: ~"(min-width: 415px) and (max-width: 480px)";
@@ -8,42 +7,66 @@
 @tablet-large: ~"(min-width: 769px) and (max-width: 1024px)";
 @laptop: ~"(min-width: 1025px) and (max-width: 1280px)";
 
-.header {
-    background-color: @main-color;
-    display:flex;
-    text-align: center;
-    width: 100%;
-    height: 20vh;
-    margin-bottom: 10%;
-}
-
-.hrf-logo-img-container img {
-    height: 64px;
-    width: 98px;
-    margin-left: 15%;
-}
-
-.header-text-container {
-    text-align: center;
-    width: 100%;
+.open {
+    display: flex;
     align-items: center;
+    text-align: center;
+    background-color: #404C4A; 
+    color: #FFFFFF !important; /* Ensures text color is white */
+
+    .header { 
+        display: flex;
+        text-align: center;
+        width: 100%;
+        height: auto;
+        margin-bottom: 10%;
+        background-color: #404C4A; 
+        color: #FFFFFF !important; /* Ensures text color is white */
+        padding-top: 1rem;
+
+        .hrf-logo-img-container img {
+            height: 64px;
+            width: 98px;
+            margin-left: 15%;
+        }
+
+        .header-text-container {
+            display: flex;              /* Use Flexbox for layout */
+            flex-direction: column;     /* Stack children vertically */
+            align-items: center;        /* Center horizontally */
+            text-align: center;         /* Center text alignment */
+            width: 100%;                /* Full width of the container */
+            margin-top: -3rem;          /* Optional: space above the text */
+            padding-top: 0;            /* Adjust padding as necessary */
+            padding-bottom: 0;
+        }
+        
+        .header-text-container h1 {
+            font-size: 2rem;           /* Adjust as necessary */
+            color: #FFFFFF !important; /* Ensure color is white */
+            font-family: 'moneta';     /* Your chosen font */
+            margin: 0;                 /* Remove default margins */
+        }
+        
+        .header-text-container h3 {
+            color: #fff;               /* Ensure h3 color is white */
+            font-size: 0.8rem;         /* Adjust size as needed */
+            white-space: normal;       /* Allow text to wrap if necessary */
+            margin: 0;                 /* Remove margins for proper stacking */
+            padding: 0;                /* Remove padding */
+            text-align: center;        /* Center align the text */
+            width: 100%;               /* Ensure the h3 spans the full width */
+            font-family: "beatrice regular"; /* Your chosen font */
+        
+        
+        }
+    }
 }
 
-.header-text-container h1 {
-    font-size: 3rem;
-    color: @white;
-    font-family: 'moneta';
+.graphs-section {
+ display: flex;
+ justify-content: space-between;
 }
-
-.header-text-container h3 {
-    font-family: 'beatrice regular';
-    color: @white;
-    font-size: 1.2rem;
-}
-
-// .graphs-section {
-//  ADD THIS BACK IN WHEN YOU HAVE THE GRAPHS SECTION
-// }
 
 .view-more-data-btn-container {
     height: 44px;
@@ -52,28 +75,36 @@
     text-align: center;
     margin-bottom: 10%;
 }
-
 .middle-section {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    display: flex;                  /* Use Flexbox for layout */
+    justify-content: space-around;  /* Use space-around for even spacing */
+    align-items: center;            /* Center items vertically */
+    padding: 2rem 0;               /* Add vertical padding for spacing */
+
+    .hrf-img {
+        height: 200px;              /* Maintain image height */
+        width: 400px;               /* Maintain image width */
+        border-radius: 10px;        /* Keep rounded corners */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Optional: add shadow for depth */
+        margin: 1rem 1rem; 
+    }
+
+    .middle-section-text-container {
+        width: 600px;               /* Set a fixed width for text container */
+        text-align: center;          /* Center align the text */
+
+        h3 {
+            font-family: 'acumin';    /* Ensure correct font */
+            font-size: 1rem;        /* Maintain font size */
+            color: #333;              /* Optional: set a darker text color for readability */
+            line-height: 1.5;         /* Improve line spacing for readability */
+            margin: 1rem 1rem;         /* Add space above the text */
+            margin-bottom: 0;         /* Remove space below */
+            padding: 0 1rem;          /* Add horizontal padding for responsiveness */
+        }
+    }
 }
 
-.hrf-img {
-    height: 339px;
-    width: 648px;
-    border-radius: 10px;
-}
-
-.middle-section-text-container {
-    width: 700px;
-    text-align: center;
-}
-
-.middle-section-text-container h3 {
-    font-family: 'acumin';
-    font-size: 1.4rem;
-}
 
 // .bottom-section {
 //      ADD THIS BACK IN WHEN YOU HAVE A BOTTOM SECTION
@@ -175,7 +206,7 @@
 
     .middle-section-text-container h3 {
         font-size: .95rem;
-        color: @white;
+        color: #FFFFFF;
     }
 
     .bottom-section h1 {
@@ -287,7 +318,7 @@
 
     .middle-section-text-container h3 {
         font-size: 1.1rem;
-        color: @white;
+        color: #FFFFFF;
     }
 
     .bottom-section h1 {
@@ -400,7 +431,7 @@
 
     .middle-section-text-container h3 {
         font-size: 1.1rem;
-        color: @white;
+        color: #FFFFFF;
     }
 
     .bottom-section h1 {
@@ -515,7 +546,7 @@
 
     .middle-section-text-container h3 {
         font-size: 1.5rem;
-        color: @white;
+        color: #FFFFFF;
     }
 
     .bottom-section h1 {
@@ -657,7 +688,7 @@
 
     .middle-section-text-container h3 {
         font-size: 1.9rem;
-        color: @white;
+        color: #FFFFFF;
     }
 
     .bottom-section h1 {
