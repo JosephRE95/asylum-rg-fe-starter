@@ -78,7 +78,7 @@ function GraphWrapper(props) {
     
     */
 
-    console.log(data);
+   
     if (office === 'all' || !office) {
       const { data: fiscalSummary } = await axios.get(
         `https://hrf-asylum-be-b.herokuapp.com/cases/fiscalSummary`,
