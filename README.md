@@ -34,3 +34,6 @@ The following deployed site shows your exact deliverable and what you should be 
 
 This is what the raw data looks like from HRF:
 - [Sample Case Data](https://github.com/BloomTech-Labs/asylum-rg-fe-starter/blob/main/src/data/COW2021001887-I589Data.csv)
+
+
+be mindful to use index.jsx not app.jsx

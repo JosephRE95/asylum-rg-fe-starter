@@ -6,6 +6,7 @@ import {
   // useHistory,
   Switch,
 } from 'react-router-dom';
+import Auth0ProviderWithHistory from '../src/auth/auth0-provider-with-history';
 
 import 'antd/dist/antd.less';
 import { NotFoundPage } from './components/pages/NotFound';
@@ -27,13 +28,15 @@ const { primary_accent_color } = colors;
 
 const store = configureStore({ reducer: reducer });
 ReactDOM.render(
-  <Router>
-    <Provider store={store}>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </Provider>
-  </Router>,
+  <Provider store={store}>
+    <Router>
+      <Auth0ProviderWithHistory>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </Auth0ProviderWithHistory>
+    </Router>
+  </Provider>,
   document.getElementById('root')
 );
 
