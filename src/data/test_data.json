@@ -1,5 +1,5 @@
 [
-    {
+    { 
         "granted": 24.373156706704233,
         "adminClosed": 20.79086550343532,
         "denied": 54.568072100571726,
@@ -714,7 +714,7 @@
                     }
                 ]
             }
-        ],
+        ], 
         "citizenshipResults": [
             {
                 "citizenship": "MEXICO",

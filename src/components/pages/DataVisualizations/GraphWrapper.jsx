@@ -50,7 +50,12 @@ function GraphWrapper(props) {
         break;
     }
   }
-  function updateStateWithNewData(years, view, office, stateSettingCallback) {
+  async function updateStateWithNewData(
+    years,
+    view,
+    office,
+    stateSettingCallback
+  ) {
     /*
           _                                                                             _
         |                                                                                 |
@@ -73,37 +78,34 @@ function GraphWrapper(props) {
     
     */
 
+    console.log(data);
     if (office === 'all' || !office) {
-      axios
-        .get(process.env.REACT_APP_API_URI, {
-          // mock URL, can be simply replaced by `${Real_Production_URL}/summary` in prod!
-          params: {
-            from: years[0],
-            to: years[1],
-          },
-        })
-        .then(result => {
-          stateSettingCallback(view, office, test_data); // <-- `test_data` here can be simply replaced by `result.data` in prod!
-        })
-        .catch(err => {
-          console.error(err);
-        });
+      const { data: fiscalSummary } = await axios.get(
+        `https://hrf-asylum-be-b.herokuapp.com/cases/fiscalSummary`,
+        { params: { from: years[0], to: years[1] } }
+      );
+      const { data: citizenshipSummary } = await axios.get(
+        ` https://hrf-asylum-be-b.herokuapp.com/cases/citizenshipSummary`,
+        { params: { from: years[0], to: years[1] } }
+      );
+      const data = [
+        { ...fiscalSummary, citizenshipResults: citizenshipSummary },
+      ];
+      stateSettingCallback(view, office, data);
     } else {
-      axios
-        .get(process.env.REACT_APP_API_URI, {
-          // mock URL, can be simply replaced by `${Real_Production_URL}/summary` in prod!
-          params: {
-            from: years[0],
-            to: years[1],
-            office: office,
-          },
-        })
-        .then(result => {
-          stateSettingCallback(view, office, test_data); // <-- `test_data` here can be simply replaced by `result.data` in prod!
-        })
-        .catch(err => {
-          console.error(err);
-        });
+      const { data: fiscalSummary } = await axios.get(
+        `https://hrf-asylum-be-b.herokuapp.com/cases/fiscalSummary`,
+        { params: { from: years[0], to: years[1], office: office } }
+      );
+      const { data: citizenshipSummary } = await axios.get(
+        ` https://hrf-asylum-be-b.herokuapp.com/cases/citizenshipSummary`,
+        { params: { from: years[0], to: years[1], office: office } }
+      );
+      const data = [
+        { ...fiscalSummary, citizenshipResults: citizenshipSummary },
+      ];
+
+      stateSettingCallback(view, office, data);
     }
   }
   const clearQuery = (view, office) => {
