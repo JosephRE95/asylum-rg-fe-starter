@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import Logo from '../../styles/Images/WhiteLogo.png';
 import { colors } from '../../styles/data_vis_colors';
 
+import AuthNav from '../auth-nav';
+
+
 const { primary_accent_color } = colors;
 
 function HeaderContent() {
@@ -23,6 +26,9 @@ function HeaderContent() {
           <Image width={75} src={Logo} preview={false} alt="HRF logo white" />
         </a>
       </div>
+      <div className="navbar-brand logo">
+      <AuthNav />
+      </div>
       <div>
         <Link to="/" style={{ color: '#E2F0F7', paddingRight: '75px' }}>
           Home
@@ -36,3 +42,27 @@ function HeaderContent() {
 }
 
 export { HeaderContent };
+
+
+/*
+
+
+import MainNav from './main-nav';
+import AuthNav from './auth-nav';
+
+const NavBar = () => {
+  return (
+    <div className="nav-container mb-3">
+      <nav className="navbar navbar-expand-md navbar-light bg-light">
+        <div className="container">
+          <div className="navbar-brand logo" />
+          <MainNav />
+          <AuthNav />
+        </div>
+      </nav>
+    </div>
+  );
+};
+
+export default NavBar;
+*/
