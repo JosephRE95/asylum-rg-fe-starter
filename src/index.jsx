@@ -7,7 +7,6 @@ import {
 } from 'react-router-dom';
 import Auth0ProviderWithHistory from '../src/auth/auth0-provider-with-history';
 
-// import { useAuth0 } from '@auth0/auth0-react';
 import ProtectedRoute  from './auth/protected-route';
 import Profile from './views/profile';
 
