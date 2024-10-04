@@ -6,7 +6,16 @@ import { useAuth0 } from '@auth0/auth0-react';
 const LogoutButton = () => {
   const { logout } = useAuth0();
   return (
-    <button
+    <a
+      href="#"
+      style={{ 
+        backgroundColor: '#404c4a', 
+        color: 'white',
+        padding: '10px 75px', 
+        display: 'inline-block',
+        textDecoration: 'none',
+        borderRadius: '5px'
+      }}
       className="btn btn-danger btn-block"
       onClick={() =>
         logout({
@@ -15,7 +24,7 @@ const LogoutButton = () => {
       }
     >
       Log Out
-    </button>
+    </a>
   );
 };
 
